@@ -6,9 +6,9 @@ const App = () => {
   const [serverData, setServerData] = useState(null);
   useEffect(() => {
     const apiGetter = async () => {
-      const response = await axios.get("http://localhost:3001/api");
-      console.log(response.data.message);
-      setServerData(response.data.message);
+      const {data} = await axios.get("http://localhost:3001/api");
+      console.log(data.message);
+      setServerData(data.message);
     };
     apiGetter();
   });
